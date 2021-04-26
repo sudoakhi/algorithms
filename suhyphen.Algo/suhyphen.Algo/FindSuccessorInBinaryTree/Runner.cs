@@ -1,8 +1,9 @@
-﻿using System;
+﻿using suhyphen.Algo.Common;
+using System;
 
 namespace suhyphen.Algo.FindSuccessorInBinaryTree
 {
-    internal class BinaryTreeRunner
+    internal class Runner
     {
         public static void Run()
         {
@@ -24,7 +25,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             Console.WriteLine();
 
             //This should output : 4
-            int? successorValue = binaryTreeHelper.FindSuccessorSubOptimalByValue(binaryTree, 8);
+            int? successorValue = Algorithm.FindSuccessorSubOptimalByValue(binaryTree, 8);
             if(successorValue != null)
             {
                 Console.WriteLine("Successor Value found: " + successorValue);
@@ -35,7 +36,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             //This should output : 5
-            successorValue = binaryTreeHelper.FindSuccessorSubOptimalByValue(binaryTree, 2);
+            successorValue = Algorithm.FindSuccessorSubOptimalByValue(binaryTree, 2);
             if (successorValue != null)
             {
                 Console.WriteLine("Successor Value found: " + successorValue);
@@ -46,7 +47,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             //This should output : No successor found!
-            successorValue = binaryTreeHelper.FindSuccessorSubOptimalByValue(binaryTree, 7);
+            successorValue = Algorithm.FindSuccessorSubOptimalByValue(binaryTree, 7);
             if (successorValue != null)
             {
                 Console.WriteLine("Successor Value found: " + successorValue);
@@ -85,7 +86,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             Console.WriteLine();
 
             // This should output: Node with value as 1
-            BinaryTreeNode successorNode = binaryTreeHelper.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode5);
+            BinaryTreeNode successorNode = Algorithm.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode5);
             if(successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);
@@ -96,7 +97,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             // This should output: Node with value as 3
-            successorNode = binaryTreeHelper.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode1);
+            successorNode = Algorithm.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode1);
             if (successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);
@@ -107,7 +108,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             // This should output: No Successor found!
-            successorNode = binaryTreeHelper.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode3);
+            successorNode = Algorithm.FindSuccessorSubOptimalByNode(newBinaryTree, binaryTreeNode3);
             if (successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);
@@ -118,7 +119,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             // This should output: Node with value as 3
-            successorNode = binaryTreeHelper.FindSuccessorOptimalByNode(binaryTreeNode1);
+            successorNode = Algorithm.FindSuccessorOptimalByNode(binaryTreeNode1);
             if (successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);
@@ -129,7 +130,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             // This should output: Node with value as 1
-            successorNode = binaryTreeHelper.FindSuccessorOptimalByNode(binaryTreeNode5);
+            successorNode = Algorithm.FindSuccessorOptimalByNode(binaryTreeNode5);
             if (successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);
@@ -140,7 +141,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             }
 
             // This should output: No Successor found!
-            successorNode = binaryTreeHelper.FindSuccessorOptimalByNode(binaryTreeNode3);
+            successorNode = Algorithm.FindSuccessorOptimalByNode(binaryTreeNode3);
             if (successorNode != null)
             {
                 Console.WriteLine("Successor Node found with Value: " + successorNode.Value);

@@ -1,4 +1,4 @@
-﻿namespace suhyphen.Algo.FindSuccessorInBinaryTree
+﻿namespace suhyphen.Algo.Common
 {
     internal class BinaryTreeNode
     {
