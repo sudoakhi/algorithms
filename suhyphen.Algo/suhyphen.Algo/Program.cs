@@ -1,4 +1,5 @@
-﻿using System;
+﻿using suhyphen.Algo.FindSuccessorInBinaryTree;
+using System;
 
 namespace suhyphen.Algo
 {
@@ -6,7 +7,8 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BinaryTreeRunner.Run();
+            Console.ReadKey();
         }
     }
 }
