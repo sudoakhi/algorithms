@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            FindSuccessorInBinaryTree.Runner.Run();
+            LongestSubArrayWithSum.Runner.Run();
             Console.ReadKey();
         }
     }
