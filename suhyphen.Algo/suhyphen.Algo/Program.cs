@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            WaterfallStreams.Runner.Run();
+            LinkedListPalindrome.Runner.Run();
             Console.ReadKey();
         }
     }
