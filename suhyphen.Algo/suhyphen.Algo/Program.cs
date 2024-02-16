@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            LinkedListPalindrome.Runner.Run();
+            MinMaxStackConstruction.Runner.Run();
             Console.ReadKey();
         }
     }
