@@ -12,11 +12,21 @@ namespace suhyphen.Algo.MinMaxStackConstruction
         static List<int> maxStack = new List<int>();
         public static int Peek()
         {
+            if(stack.Count == 0)
+            {
+                return -1;
+            }
+
             return stack[stack.Count -1];
         }
 
         public static int Pop()
         {
+            if (stack.Count == 0)
+            {
+                return -1;
+            }
+
             int value = stack[stack.Count - 1];
             stack.RemoveAt(stack.Count - 1);
             minStack.RemoveAt(minStack.Count - 1);
@@ -63,11 +73,21 @@ namespace suhyphen.Algo.MinMaxStackConstruction
 
         public static int GetMin()
         {
+            if (minStack.Count == 0)
+            {
+                return -1;
+            }
+
             return minStack[minStack.Count - 1];
         }
 
         public static int GetMax()
         {
+            if (maxStack.Count == 0)
+            {
+                return -1;
+            }
+
             return maxStack[maxStack.Count - 1];
         }
     }
