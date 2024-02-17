@@ -1,10 +1,56 @@
 ﻿using suhyphen.Algo.Common;
+using System;
 using System.Collections.Generic;
 
-namespace suhyphen.Algo.FindSuccessorInBinaryTree
+namespace suhyphen.Algo.BT_Algorithms
 {
     internal class Algorithm
     {
+        public static void Insert(BinaryTree binaryTree, int value)
+        {
+            BinaryTreeNode newBinaryTreeNode = new BinaryTreeNode(value);
+
+            if (binaryTree.Root == null)
+            {
+                binaryTree.Root = newBinaryTreeNode;
+                return;
+            }
+
+            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
+            nodeQueue.Enqueue(binaryTree.Root);
+            while (nodeQueue.Count > 0)
+            {
+                BinaryTreeNode currentNode = nodeQueue.Dequeue();
+                if (currentNode.Left == null)
+                {
+                    newBinaryTreeNode.Parent = currentNode;
+                    currentNode.Left = newBinaryTreeNode;
+                    return;
+                }
+                else if (currentNode.Right == null)
+                {
+                    newBinaryTreeNode.Parent = currentNode;
+                    currentNode.Right = newBinaryTreeNode;
+                    return;
+                }
+                else
+                {
+                    nodeQueue.Enqueue(currentNode.Left);
+                    nodeQueue.Enqueue(currentNode.Right);
+                }
+            }
+        }
+        internal static void RecursiveInorderTraversal(BinaryTreeNode binaryTreeNode)
+        {
+            if (binaryTreeNode == null)
+            {
+                return;
+            }
+
+            RecursiveInorderTraversal(binaryTreeNode.Left);
+            Console.Write(binaryTreeNode.Value + " ");
+            RecursiveInorderTraversal(binaryTreeNode.Right);
+        }
         internal static BinaryTreeNode FindSuccessorOptimalByNode(BinaryTreeNode inputBinaryTreeNode)
         {
             if (inputBinaryTreeNode.Right != null)
@@ -37,7 +83,6 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
 
             return null;
         }
-
         internal static BinaryTreeNode FindSuccessorSubOptimalByNode(BinaryTree binaryTree, BinaryTreeNode inputBinaryTreeNode)
         {
             List<BinaryTreeNode> inOrderTraversalNodes = new List<BinaryTreeNode>();
@@ -60,7 +105,6 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
 
             return null;
         }
-
         private static BinaryTreeNode GetRightMostParent(BinaryTreeNode node)
         {
             BinaryTreeNode currentNode = node;
@@ -71,7 +115,6 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
 
             return currentNode.Parent;
         }
-
         private static BinaryTreeNode GetLeftMostChild(BinaryTreeNode node)
         {
             BinaryTreeNode currentNode = node;
@@ -82,7 +125,6 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
 
             return currentNode;
         }
-
         private static void GetInOrderTraversalOrderByNodes(BinaryTreeNode node, List<BinaryTreeNode> inOrderTraversalNodes)
         {
             if (node == null)
@@ -94,7 +136,6 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             inOrderTraversalNodes.Add(node);
             GetInOrderTraversalOrderByNodes(node.Right, inOrderTraversalNodes);
         }
-
         private static void GetInOrderTraversalOrderByValue(BinaryTreeNode binaryTreeNode, List<int> inOrderTraversalOrderValues)
         {
             if (binaryTreeNode == null)

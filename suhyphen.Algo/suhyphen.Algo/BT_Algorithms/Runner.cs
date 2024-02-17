@@ -1,27 +1,25 @@
 ﻿using suhyphen.Algo.Common;
 using System;
 
-namespace suhyphen.Algo.FindSuccessorInBinaryTree
+namespace suhyphen.Algo.BT_Algorithms
 {
     internal class Runner
     {
         public static void Run()
         {
-            BinaryTreeHelper binaryTreeHelper = new BinaryTreeHelper();
-
             // Generate a Binary Tree
             BinaryTree binaryTree = new BinaryTree();
-            binaryTreeHelper.Insert(binaryTree, 1);
-            binaryTreeHelper.Insert(binaryTree, 2);
-            binaryTreeHelper.Insert(binaryTree, 3);
-            binaryTreeHelper.Insert(binaryTree, 4);
-            binaryTreeHelper.Insert(binaryTree, 5);
-            binaryTreeHelper.Insert(binaryTree, 6);
-            binaryTreeHelper.Insert(binaryTree, 7);
-            binaryTreeHelper.Insert(binaryTree, 8);
-            
+            Algorithm.Insert(binaryTree, 1);
+            Algorithm.Insert(binaryTree, 2);
+            Algorithm.Insert(binaryTree, 3);
+            Algorithm.Insert(binaryTree, 4);
+            Algorithm.Insert(binaryTree, 5);
+            Algorithm.Insert(binaryTree, 6);
+            Algorithm.Insert(binaryTree, 7);
+            Algorithm.Insert(binaryTree, 8);
+
             //This should output : 8 4 2 5 1 6 3 7
-            binaryTreeHelper.RecursiveInorderTraversal(binaryTree.Root);
+            Algorithm.RecursiveInorderTraversal(binaryTree.Root);
             Console.WriteLine();
 
             //This should output : 4
@@ -82,7 +80,7 @@ namespace suhyphen.Algo.FindSuccessorInBinaryTree
             binaryTreeNode6.Parent = binaryTreeNode4;
 
             //This should output : 6 4 2 5 1 3
-            binaryTreeHelper.RecursiveInorderTraversal(newBinaryTree.Root);
+            Algorithm.RecursiveInorderTraversal(newBinaryTree.Root);
             Console.WriteLine();
 
             // This should output: Node with value as 1

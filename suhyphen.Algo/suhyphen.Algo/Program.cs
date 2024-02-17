@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            Graph_CycleInGraph.Runner.Run();
+            BST_Algorithms.Runner.Run();
             Console.ReadKey();
         }
     }
