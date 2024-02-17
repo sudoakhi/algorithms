@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            Strings_LongestPalindromicSubstring.Runner.Run();
+            Graph_GraphTraversal.Runner.Run();
             Console.ReadKey();
         }
     }
