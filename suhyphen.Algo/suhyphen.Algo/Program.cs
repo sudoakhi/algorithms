@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main()
         {
-            Strings_CaesarCipherEncryptor.Runner.Run();
+            DP_MaxSubsetSumNoAdjacent.Runner.Run();
             Console.ReadKey();
         }
     }
