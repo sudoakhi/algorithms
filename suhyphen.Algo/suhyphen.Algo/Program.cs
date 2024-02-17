@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            Graph_GraphTraversal.Runner.Run();
+            Graph_CycleInGraph.Runner.Run();
             Console.ReadKey();
         }
     }
