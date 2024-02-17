@@ -1,7 +1,7 @@
 ﻿using suhyphen.Algo.Common;
 using System;
 
-namespace suhyphen.Algo.BT_Algorithms
+namespace suhyphen.Algo.BT_FindSuccessor
 {
     internal class Runner
     {
@@ -9,17 +9,17 @@ namespace suhyphen.Algo.BT_Algorithms
         {
             // Generate a Binary Tree
             BinaryTree binaryTree = new BinaryTree();
-            Algorithm.Insert(binaryTree, 1);
-            Algorithm.Insert(binaryTree, 2);
-            Algorithm.Insert(binaryTree, 3);
-            Algorithm.Insert(binaryTree, 4);
-            Algorithm.Insert(binaryTree, 5);
-            Algorithm.Insert(binaryTree, 6);
-            Algorithm.Insert(binaryTree, 7);
-            Algorithm.Insert(binaryTree, 8);
+            BinaryTreeHelper.Insert(binaryTree, 1);
+            BinaryTreeHelper.Insert(binaryTree, 2);
+            BinaryTreeHelper.Insert(binaryTree, 3);
+            BinaryTreeHelper.Insert(binaryTree, 4);
+            BinaryTreeHelper.Insert(binaryTree, 5);
+            BinaryTreeHelper.Insert(binaryTree, 6);
+            BinaryTreeHelper.Insert(binaryTree, 7);
+            BinaryTreeHelper.Insert(binaryTree, 8);
 
             //This should output : 8 4 2 5 1 6 3 7
-            Algorithm.RecursiveInorderTraversal(binaryTree.Root);
+            BinaryTreeHelper.RecursiveInorderTraversal(binaryTree.Root);
             Console.WriteLine();
 
             //This should output : 4
@@ -80,7 +80,7 @@ namespace suhyphen.Algo.BT_Algorithms
             binaryTreeNode6.Parent = binaryTreeNode4;
 
             //This should output : 6 4 2 5 1 3
-            Algorithm.RecursiveInorderTraversal(newBinaryTree.Root);
+            BinaryTreeHelper.RecursiveInorderTraversal(newBinaryTree.Root);
             Console.WriteLine();
 
             // This should output: Node with value as 1

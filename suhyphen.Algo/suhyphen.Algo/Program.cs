@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main(string[] args)
         {
-            BST_Algorithms.Runner.Run();
+            BT_FindNodeDepths.Runner.Run();
             Console.ReadKey();
         }
     }
