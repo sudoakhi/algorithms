@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main()
         {
-            BT_EvaluateExpressionTree.Runner.Run();
+            Strings_CaesarCipherEncryptor.Runner.Run();
             Console.ReadKey();
         }
     }

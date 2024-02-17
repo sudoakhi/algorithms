@@ -21,10 +21,9 @@ namespace suhyphen.Algo.BT_EvaluateExpressionTree
             BinaryTreeHelper.Insert(binaryTree, 2);
             BinaryTreeHelper.Insert(binaryTree, 3);
 
-            //This should output : 8 4 9 2 5 1 6 3 7
-            Console.WriteLine("InOrder Traversal");
-            BinaryTreeHelper.RecursiveInorderTraversal(binaryTree.Root);
-            Console.WriteLine();
+            // This should result 6
+            int result = Algorithm.EvaluateExpressionTree(binaryTree.Root);
+            Console.WriteLine(result);
         }
     }
 }
