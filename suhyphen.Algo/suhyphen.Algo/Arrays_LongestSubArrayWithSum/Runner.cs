@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.LongestSubArrayWithSum
+namespace suhyphen.Algo.Arrays_LongestSubArrayWithSum
 {
     internal class Runner
     {

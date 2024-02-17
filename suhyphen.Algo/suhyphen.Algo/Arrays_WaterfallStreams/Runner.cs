@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.WaterfallStreams
+namespace suhyphen.Algo.Arrays_WaterfallStreams
 {
     internal class Runner
     {

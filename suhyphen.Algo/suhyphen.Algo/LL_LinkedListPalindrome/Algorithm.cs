@@ -5,7 +5,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace suhyphen.Algo.LinkedListPalindrome
+namespace suhyphen.Algo.LL_LinkedListPalindrome
 {
     internal class Algorithm
     {

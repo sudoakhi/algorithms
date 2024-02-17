@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.LongestPeak
+namespace suhyphen.Algo.Arrays_LongestPeak
 {
     internal class Runner
     {

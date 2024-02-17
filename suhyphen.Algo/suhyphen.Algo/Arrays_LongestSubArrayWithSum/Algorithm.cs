@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Net.NetworkInformation;
 using System.Text;
 
-namespace suhyphen.Algo.LongestSubArrayWithSum
+namespace suhyphen.Algo.Arrays_LongestSubArrayWithSum
 {
     internal class Algorithm
     {

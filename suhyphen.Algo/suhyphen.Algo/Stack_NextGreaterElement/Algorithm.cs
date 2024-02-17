@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.NextGreaterElement
+namespace suhyphen.Algo.Stack_NextGreaterElement
 {
     internal class Algorithm
     {

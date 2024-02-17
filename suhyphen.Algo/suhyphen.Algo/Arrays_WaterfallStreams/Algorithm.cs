@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.XPath;
 
-namespace suhyphen.Algo.WaterfallStreams
+namespace suhyphen.Algo.Arrays_WaterfallStreams
 {
     internal class Algorithm
     {

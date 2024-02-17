@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace suhyphen.Algo.MinMaxStackConstruction
+namespace suhyphen.Algo.Stack_MinMaxStackConstruction
 {
     internal class Algorithm
     {

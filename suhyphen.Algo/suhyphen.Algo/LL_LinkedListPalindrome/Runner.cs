@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.LinkedListPalindrome
+namespace suhyphen.Algo.LL_LinkedListPalindrome
 {
     internal class Runner
     {

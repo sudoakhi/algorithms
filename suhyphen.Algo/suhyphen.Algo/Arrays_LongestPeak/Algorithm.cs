@@ -4,7 +4,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace suhyphen.Algo.LongestPeak
+namespace suhyphen.Algo.Arrays_LongestPeak
 {
     internal class Algorithm
     {
