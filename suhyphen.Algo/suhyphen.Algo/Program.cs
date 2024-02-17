@@ -4,9 +4,9 @@ namespace suhyphen.Algo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            BT_FindNodeDepths.Runner.Run();
+            BT_EvaluateExpressionTree.Runner.Run();
             Console.ReadKey();
         }
     }
