@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main()
         {
-            Trie_TrieTraversal.Runner.Run();
+            Trie_SuffixTrie.Runner.Run();
             Console.ReadKey();
         }
     }

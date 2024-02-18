@@ -5,13 +5,13 @@ using System.Text;
 
 namespace suhyphen.Algo.Common
 {
-    public class Trie
+    public class PrefixTrie
     {
-        internal TrieNode Root;
+        internal PrefixTrieNode Root;
 
-        public Trie()
+        public PrefixTrie()
         {
-            Root = new TrieNode('^', 0, null);
+            Root = new PrefixTrieNode('^', 0, null);
         }
     }
 }

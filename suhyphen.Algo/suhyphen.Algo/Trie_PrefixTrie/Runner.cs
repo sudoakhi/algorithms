@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Trie_TrieTraversal
+namespace suhyphen.Algo.Trie_PrefixTrie
 {
     internal class Runner
     {
@@ -12,27 +12,27 @@ namespace suhyphen.Algo.Trie_TrieTraversal
             string[] strings = {"the", "a", "there", "answer",
                         "any", "by", "bye", "their"};
 
-            Trie trie = new Trie();
+            PrefixTrie trie = new PrefixTrie();
             foreach(string s in strings)
             {
-                TrieHelper.Insert(trie, s);
+                Algorithm.Insert(trie, s);
             }
 
             //This should return true
-            bool isStringPresent = TrieHelper.Search(trie, "there");
+            bool isStringPresent = Algorithm.Search(trie, "there");
             Console.WriteLine(isStringPresent);
 
             //This should return false
-            TrieHelper.Delete(trie, "there");
-            isStringPresent = TrieHelper.Search(trie, "there");
+            Algorithm.Delete(trie, "there");
+            isStringPresent = Algorithm.Search(trie, "there");
             Console.WriteLine(isStringPresent);
 
-            //This should return false
-            isStringPresent = TrieHelper.Search(trie, "bya");
+            //This should return Algorithm
+            isStringPresent = Algorithm.Search(trie, "bya");
             Console.WriteLine(isStringPresent);
 
             //This should return true
-            isStringPresent = TrieHelper.Search(trie, "by");
+            isStringPresent = Algorithm.Search(trie, "by");
             Console.WriteLine(isStringPresent);
 
         }

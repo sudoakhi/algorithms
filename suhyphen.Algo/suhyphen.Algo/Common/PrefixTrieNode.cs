@@ -4,17 +4,17 @@ using System.Text;
 
 namespace suhyphen.Algo.Common
 {
-    public class TrieNode
+    public class PrefixTrieNode
     {
         internal char Value;
-        internal List<TrieNode> Children;
+        internal List<PrefixTrieNode> Children;
         internal int Depth;
-        internal TrieNode Parent;
+        internal PrefixTrieNode Parent;
 
-        public TrieNode(char value, int depth, TrieNode parent)
+        public PrefixTrieNode(char value, int depth, PrefixTrieNode parent)
         {
             Value = value;
-            Children = new List<TrieNode>();
+            Children = new List<PrefixTrieNode>();
             Depth = depth;
             Parent = parent;
         }
@@ -24,9 +24,9 @@ namespace suhyphen.Algo.Common
             return Children.Count == 0;
         }
 
-        public TrieNode FindChildNode(char c)
+        public PrefixTrieNode FindChildNode(char c)
         {
-            foreach (TrieNode trieNode in Children)
+            foreach (PrefixTrieNode trieNode in Children)
             {
                 if (trieNode.Value == c)
                 {
