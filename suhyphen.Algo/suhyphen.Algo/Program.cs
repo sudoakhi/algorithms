@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main()
         {
-            Trie_SuffixTrie.Runner.Run();
+            Trie_SuffixTrieMultiStringSearch.Runner.Run();
             Console.ReadKey();
         }
     }
