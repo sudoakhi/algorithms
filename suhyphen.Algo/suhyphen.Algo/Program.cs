@@ -6,7 +6,7 @@ namespace suhyphen.Algo
     {
         static void Main()
         {
-            DP_MaxSubsetSumNoAdjacent.Runner.Run();
+            Trie_TrieTraversal.Runner.Run();
             Console.ReadKey();
         }
     }
