@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class SingleLinkedListNode
+    internal sealed class SingleLinkedListNode
     {
-        internal int Value;
-        internal SingleLinkedListNode Next;
+        internal int _value;
+        internal SingleLinkedListNode _next;
 
         public SingleLinkedListNode(int value)
         {
-            Value = value;
-            Next = null;
+            _value = value;
+            _next = null;
         }
     }
 }

@@ -3,64 +3,64 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class SingleLinkedListHelper
+    internal sealed class SingleLinkedListHelper
     {
-        internal void InsertFront(SingleLinkedList singleLinkedList, int newData)
+        internal static void InsertFront(SingleLinkedList singleLinkedList, int newData)
         {
-            SingleLinkedListNode newNode = new SingleLinkedListNode(newData)
+            var newNode = new SingleLinkedListNode(newData)
             {
-                Next = singleLinkedList.Head
+                _next = singleLinkedList._head
             };
-            singleLinkedList.Head = newNode;
+            singleLinkedList._head = newNode;
         }
 
-        internal void InsertLast(SingleLinkedList singleLinkedList, int newData)
+        internal static void InsertLast(SingleLinkedList singleLinkedList, int newData)
         {
-            SingleLinkedListNode newNode = new SingleLinkedListNode(newData);
-            SingleLinkedListNode temp = singleLinkedList.Head;
+            var newNode = new SingleLinkedListNode(newData);
+            var temp = singleLinkedList._head;
             if (temp == null)
             {
-                singleLinkedList.Head = newNode;
+                singleLinkedList._head = newNode;
                 return;
             }
 
-            while (temp.Next != null)
+            while (temp._next != null)
             {
-                temp = temp.Next;
+                temp = temp._next;
             }
 
-            temp.Next = newNode;
+            temp._next = newNode;
         }
 
-        internal void DeleteNodeByKey(SingleLinkedList singleLinkedList, int key)
+        internal static void DeleteNodeByKey(SingleLinkedList singleLinkedList, int key)
         {
-            SingleLinkedListNode temp = singleLinkedList.Head;
+            var temp = singleLinkedList._head;
             SingleLinkedListNode previousNode = null;
 
-            if (temp != null && temp.Value == key)
+            if (temp != null && temp._value == key)
             {
-                singleLinkedList.Head = temp.Next;
+                singleLinkedList._head = temp._next;
                 return;
             }
 
-            while (temp != null && temp.Value != key)
+            while (temp != null && temp._value != key)
             {
                 previousNode = temp;
-                temp = temp.Next;
+                temp = temp._next;
             }
 
-            previousNode.Next = temp.Next;
+            previousNode._next = temp._next;
         }
 
-        internal void Traverse(SingleLinkedList singleLinkedList)
+        internal static void Traverse(SingleLinkedList singleLinkedList)
         {
-            SingleLinkedListNode temp = singleLinkedList.Head;
+            var temp = singleLinkedList._head;
             while (temp != null)
             {
-                Console.Write(temp.Value + " ");
-                temp = temp.Next;
+                Console.Write(temp._value + " ");
+                temp = temp._next;
             }
 
             Console.WriteLine();

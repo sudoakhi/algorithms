@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
     public class SuffixTrieNode
     {
-        public Dictionary<char, SuffixTrieNode> Children = new Dictionary<char, SuffixTrieNode>();
+        internal Dictionary<char, SuffixTrieNode> _children = [];
     }
 }

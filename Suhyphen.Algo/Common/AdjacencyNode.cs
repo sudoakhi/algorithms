@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class AdjacencyNode
+    internal sealed class AdjacencyNode
     {
-        internal string Vertex;
-        internal int Weight;
+        internal string _vertex;
+        internal int _weight;
 
         public AdjacencyNode(string vertex, int weight)
         {
-            Vertex = vertex;
-            Weight = weight;
+            _vertex = vertex;
+            _weight = weight;
         }
     }
 }

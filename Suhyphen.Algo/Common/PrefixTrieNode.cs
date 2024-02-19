@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
     public class PrefixTrieNode
     {
@@ -26,7 +26,7 @@ namespace suhyphen.Algo.Common
 
         public PrefixTrieNode FindChildNode(char c)
         {
-            foreach (PrefixTrieNode trieNode in Children)
+            foreach (var trieNode in Children)
             {
                 if (trieNode.Value == c)
                 {
@@ -39,7 +39,7 @@ namespace suhyphen.Algo.Common
 
         public void DeleteChildNode(char c)
         {
-            for(int i=0; i< Children.Count; i++)
+            for(var i=0; i< Children.Count; i++)
             {
                 if (Children[i].Value == c)
                 {

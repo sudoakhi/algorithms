@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Suhyphen.Algo.Common;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class Graph
+    internal sealed class Graph
     {
-        internal Dictionary<string, List<AdjacencyNode>> VertexAdjacencyNodes = new Dictionary<string, List<AdjacencyNode>>();
+        internal Dictionary<string, List<AdjacencyNode>> _vertexAdjacencyNodes = [];
 
         public Graph(List<Edge> edges)
         {
-            foreach(Edge edge in edges)
+            foreach(var edge in edges)
             {
-                if(VertexAdjacencyNodes.ContainsKey(edge.SourceVertex))
+                if(_vertexAdjacencyNodes.TryGetValue(edge._sourceVertex , out var value) )
                 {
-                    List<AdjacencyNode> adjacencyNodes = VertexAdjacencyNodes[edge.SourceVertex];
-                    AdjacencyNode adjacencyNode = new AdjacencyNode(edge.DestinationVertex, edge.Weight);
+                    var adjacencyNodes = value;
+                    var adjacencyNode = new AdjacencyNode(edge._destinationVertex, edge._weight);
                     adjacencyNodes.Add(adjacencyNode);
-                    VertexAdjacencyNodes[edge.SourceVertex] = adjacencyNodes;
+                    _vertexAdjacencyNodes[edge._sourceVertex] = adjacencyNodes;
                 }
                 else
                 {
-                    List<AdjacencyNode> adjacencyNodes = new List<AdjacencyNode>();
-                    AdjacencyNode adjacencyNode = new AdjacencyNode(edge.DestinationVertex, edge.Weight);
+                    var adjacencyNodes = new List<AdjacencyNode>();
+                    var adjacencyNode = new AdjacencyNode(edge._destinationVertex, edge._weight);
                     adjacencyNodes.Add(adjacencyNode);
-                    VertexAdjacencyNodes.Add(edge.SourceVertex, adjacencyNodes);
+                    _vertexAdjacencyNodes.Add(edge._sourceVertex, adjacencyNodes);
                 }
             }
         }

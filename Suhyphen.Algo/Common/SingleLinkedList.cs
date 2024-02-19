@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class SingleLinkedList
+    public class SingleLinkedList
     {
-        internal SingleLinkedListNode Head;
+        internal SingleLinkedListNode _head;
     }
 }

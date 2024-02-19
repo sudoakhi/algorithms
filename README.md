@@ -28,16 +28,12 @@ Contributions to this repository are welcome! If you have a solution to a proble
 
 You are free to use the code in this repository for learning purposes or as a reference for your own projects. However, make sure to understand the solutions and algorithms before using them in production code.
 
-## Acknowledgements
-
-Special thanks to [contributors](CONTRIBUTORS.md) who have contributed to this repository.
-
 ## License
 
 This repository is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions, suggestions, or concerns, feel free to [contact](mailto:your-email@example.com) us.
+If you have any questions, suggestions, or concerns, feel free to [contact](mailto:akhileshsingh72@gmail.com) me.
 
 Happy Coding!
