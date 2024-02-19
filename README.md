@@ -24,9 +24,9 @@ The repository is organized into different categories based on the type of probl
 
 Each category contains multiple problems and solutions in C#.
 
-## How to use?
+## Explore
 
-Look for Runner class in each problem directory. Provide inputs and validate exptected outut by invoking the Run() method from Program.cs
+Look for Runner class in each problem directory. Provide inputs and validate exptected outputs by invoking the Run() method from Program.cs
 
 ## Contributing
 
