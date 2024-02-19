@@ -38,6 +38,6 @@ This repository is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions, suggestions, or concerns, feel free to [contact](mailto:your-email@example.com) us.
+If you have any questions, suggestions, or concerns, feel free to [contact](mailto:akhileshsingh72@gmail.com) me.
 
 Happy Coding!
