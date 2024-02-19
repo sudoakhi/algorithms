@@ -1,6 +1,6 @@
-# C# Algorithmic Problem Solutions
+# Algorithms Implementation in C#
 
-Welcome to the C# Algorithmic Problem Solutions repository! This repository is dedicated to providing solutions to major algorithmic problems using the C# programming language.
+Welcome to the Algorithms Implementation in C# repository! This repository is dedicated to providing solutions to major algorithmic problems using the C# programming language.
 
 ## Overview
 
@@ -8,17 +8,25 @@ This repository serves as a resource for individuals interested in algorithmic p
 
 ## Contents
 
-The repository is organized into different categories based on the type of problems. Some of the categories include:
+The repository is organized into different categories based on the type of problems. Looks for the namespaces starting with Data Structure name
 
+- Arrays Algorithms
 - Sorting Algorithms
-- Searching Algorithms
-- Dynamic Programming
-- Graph Algorithms
-- String Algorithms
-- Math Problems
+- Dynamic Programming [DP]
+- Graphs Algorithms
+- Strings Algorithms
+- Stack Algorithms
+- Linked List Algorithms [LL]
+- Binary Tree Algorithms [BT]
+- Binary Search Tree Algorithms [BST]
+- Greedy Algorithms
 - And more...
 
-Each category contains its own set of problems along with detailed explanations and solutions in C#.
+Each category contains multiple problems and solutions in C#.
+
+## How to use?
+
+Look for Runner class in each problem directory. Provide inputs and validate exptected outut by invoking the Run() method from Program.cs
 
 ## Contributing
 
