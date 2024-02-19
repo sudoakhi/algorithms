@@ -2,40 +2,41 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class BinarySearchTreeHelper
+    internal static class BinarySearchTreeHelper
     {
         public static void Insert(BinarySearchTree binarySearchTree, int data)
         {
-            BinarySearchTreeNode rootNode = binarySearchTree.Root;
-            BinarySearchTreeNode newNode = new BinarySearchTreeNode(data);
+            var rootNode = binarySearchTree._root;
+            var newNode = new BinarySearchTreeNode(data);
 
             if (rootNode == null)
             {
-                binarySearchTree.Root = newNode;
+                binarySearchTree._root = newNode;
             }
             else
             {
-                BinarySearchTreeNode currentNode = rootNode;
+                var currentNode = rootNode;
                 while (true)
                 {
-                    BinarySearchTreeNode parentNode = currentNode;
-                    if (newNode.Data < currentNode.Data)
+                    var parentNode = currentNode;
+                    if (newNode._data < currentNode._data)
                     {
-                        currentNode = currentNode.Left;
-                        if (currentNode == null)
+                        currentNode = currentNode._left;
+                        if ( currentNode != null )
                         {
-                            parentNode.Left = newNode;
-                            return;
+                            continue;
                         }
+                        parentNode._left = newNode;
+                        return;
                     }
                     else
                     {
-                        currentNode = currentNode.Right;
+                        currentNode = currentNode._right;
                         if (currentNode == null)
                         {
-                            parentNode.Right = newNode;
+                            parentNode._right = newNode;
                             return;
                         }
                     }
@@ -50,9 +51,9 @@ namespace suhyphen.Algo.Common
                 return;
             }
 
-            InOrderTraversal(root.Left);
-            Console.Write(root.Data + " ");
-            InOrderTraversal(root.Right);
+            InOrderTraversal(root._left);
+            Console.Write(root._data + " ");
+            InOrderTraversal(root._right);
         }
     }
 }

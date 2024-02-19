@@ -1,7 +1,7 @@
-﻿namespace suhyphen.Algo.Common
+﻿namespace Suhyphen.Algo.Common
 {
-    internal class BinaryTree
+    internal sealed class BinaryTree
     {
-        internal BinaryTreeNode Root;
+        internal BinaryTreeNode _root;
     }
 }

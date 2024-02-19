@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace suhyphen.Algo
+namespace Suhyphen.Algo
 {
-    class Program
+    internal sealed class Program
     {
-        static void Main()
+        public static void Main()
         {
-            Trie_SuffixTrieMultiStringSearch.Runner.Run();
-            Console.ReadKey();
+            Trie.SuffixTrieMultiStringSearch.Runner.Run();
+            _ = Console.ReadKey();
         }
     }
 }

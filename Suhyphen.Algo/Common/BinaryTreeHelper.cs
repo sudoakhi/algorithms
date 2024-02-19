@@ -2,41 +2,41 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class BinaryTreeHelper
+    internal static class BinaryTreeHelper
     {
         public static void Insert(BinaryTree binaryTree, int value)
         {
-            BinaryTreeNode newBinaryTreeNode = new BinaryTreeNode(value);
+            var newBinaryTreeNode = new BinaryTreeNode(value);
 
-            if (binaryTree.Root == null)
+            if (binaryTree._root == null)
             {
-                binaryTree.Root = newBinaryTreeNode;
+                binaryTree._root = newBinaryTreeNode;
                 return;
             }
 
-            Queue<BinaryTreeNode> nodeQueue = new Queue<BinaryTreeNode>();
-            nodeQueue.Enqueue(binaryTree.Root);
+            var nodeQueue = new Queue<BinaryTreeNode>();
+            nodeQueue.Enqueue(binaryTree._root);
             while (nodeQueue.Count > 0)
             {
-                BinaryTreeNode currentNode = nodeQueue.Dequeue();
-                if (currentNode.Left == null)
+                var currentNode = nodeQueue.Dequeue();
+                if (currentNode._left == null)
                 {
-                    newBinaryTreeNode.Parent = currentNode;
-                    currentNode.Left = newBinaryTreeNode;
+                    newBinaryTreeNode._parent = currentNode;
+                    currentNode._left = newBinaryTreeNode;
                     return;
                 }
-                else if (currentNode.Right == null)
+                else if (currentNode._right == null)
                 {
-                    newBinaryTreeNode.Parent = currentNode;
-                    currentNode.Right = newBinaryTreeNode;
+                    newBinaryTreeNode._parent = currentNode;
+                    currentNode._right = newBinaryTreeNode;
                     return;
                 }
                 else
                 {
-                    nodeQueue.Enqueue(currentNode.Left);
-                    nodeQueue.Enqueue(currentNode.Right);
+                    nodeQueue.Enqueue(currentNode._left);
+                    nodeQueue.Enqueue(currentNode._right);
                 }
             }
         }
@@ -48,9 +48,9 @@ namespace suhyphen.Algo.Common
                 return;
             }
 
-            RecursiveInorderTraversal(binaryTreeNode.Left);
-            Console.Write(binaryTreeNode.Value + " ");
-            RecursiveInorderTraversal(binaryTreeNode.Right);
+            RecursiveInorderTraversal(binaryTreeNode._left);
+            Console.Write(binaryTreeNode._value + " ");
+            RecursiveInorderTraversal(binaryTreeNode._right);
         }
     }
 }

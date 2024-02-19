@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace suhyphen.Algo.Common
+namespace Suhyphen.Algo.Common
 {
-    internal class BinarySearchTreeNode
+    public class BinarySearchTreeNode
     {
-        internal int Data;
-        internal BinarySearchTreeNode Left;
-        internal BinarySearchTreeNode Right;
+        internal int _data;
+        internal BinarySearchTreeNode _left;
+        internal BinarySearchTreeNode _right;
 
         public BinarySearchTreeNode(int data)
         {
-            Data = data;
-            Left = null;
-            Right = null;
+            _data = data;
+            _left = null;
+            _right = null;
         }
     }
 }

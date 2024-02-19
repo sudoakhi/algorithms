@@ -1,18 +1,18 @@
-﻿namespace suhyphen.Algo.Common
+﻿namespace Suhyphen.Algo.Common
 {
-    internal class BinaryTreeNode
+    public sealed class BinaryTreeNode
     {
-        internal int Value;
-        internal BinaryTreeNode Parent;
-        internal BinaryTreeNode Left;
-        internal BinaryTreeNode Right;
+        internal int _value;
+        internal BinaryTreeNode _parent;
+        internal BinaryTreeNode _left;
+        internal BinaryTreeNode _right;
 
         public BinaryTreeNode(int value)
         {
-            Value = value;
-            Parent = null;
-            Left = null;
-            Right = null;
+            _value = value;
+            _parent = null;
+            _left = null;
+            _right = null;
         }
     }
 }

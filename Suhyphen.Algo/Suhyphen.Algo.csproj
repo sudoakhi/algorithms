@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <StartupObject>suhyphen.Algo.Program</StartupObject>
+    <StartupObject>Suhyphen.Algo.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
