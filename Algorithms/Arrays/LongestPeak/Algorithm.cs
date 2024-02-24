@@ -6,10 +6,15 @@ using System.Text;
 
 namespace Algorithms.Arrays.LongestPeak
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int FindLongestPeak(int[] array)
+        public static int Run(int[] array)
         {
+            if(array == null || array.Length == 0)
+            {
+                return 0;
+            }
+
             var maxPeakLength = 0;
             for (var i = 1; i < array.Length-1; i++)
             {

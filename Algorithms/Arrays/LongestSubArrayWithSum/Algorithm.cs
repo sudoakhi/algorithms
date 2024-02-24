@@ -6,26 +6,26 @@ using System.Text;
 
 namespace Algorithms.Arrays.LongestSubArrayWithSum
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
         //Time Complexity O(N Square) Space Complexity O(1)
-        internal static int[] FindLongestSubArrayWithSumBruteForce(int[] array, int targetSum)
+        public static int[ ] RunBruteForce(int[ ] array, int targetSum)
         {
-            if (array != null)
+            if(array != null)
             {
                 int[] subArrayIndex = [];
                 var subArrayLengthForTargetSum = 0;
-                for (var i = 0; i < array.Length; i++)
+                for(var i = 0; i < array.Length; i++)
                 {
                     var j = i;
                     var sum = 0;
-                    while (sum <= targetSum && j < array.Length)
+                    while(sum <= targetSum && j < array.Length)
                     {
                         sum += array[j];
-                        if (sum == targetSum)
+                        if(sum == targetSum)
                         {
                             var length = j - i + 1;
-                            if (subArrayLengthForTargetSum < length)
+                            if(subArrayLengthForTargetSum < length)
                             {
                                 subArrayIndex = new int[2];
                                 subArrayIndex[0] = i;
@@ -45,9 +45,9 @@ namespace Algorithms.Arrays.LongestSubArrayWithSum
         }
 
         //Time Complexity O(N) Space Complexity O(1)
-        internal static int[] FindLongestSubArrayWithSum(int[] array, int targetSum)
+        public static int[ ] Run(int[ ] array, int targetSum)
         {
-            if (array != null)
+            if(array != null)
             {
                 int[] subArrayIndex = [];
                 var subArrayLengthForTargetSum = 0;
@@ -55,15 +55,15 @@ namespace Algorithms.Arrays.LongestSubArrayWithSum
                 var startIndex = 0;
                 var endIndex = 0;
 
-                while (endIndex < array.Length)
+                while(endIndex < array.Length)
                 {
-                    while (sum <= targetSum && endIndex < array.Length)
+                    while(sum <= targetSum && endIndex < array.Length)
                     {
                         sum += array[endIndex];
-                        if (sum == targetSum)
+                        if(sum == targetSum)
                         {
                             var length = endIndex - startIndex + 1;
-                            if (subArrayLengthForTargetSum < length)
+                            if(subArrayLengthForTargetSum < length)
                             {
                                 subArrayIndex = new int[2];
                                 subArrayIndex[0] = startIndex;
@@ -74,7 +74,7 @@ namespace Algorithms.Arrays.LongestSubArrayWithSum
                         endIndex++;
                     }
 
-                    while (sum > targetSum && startIndex <= endIndex)
+                    while(sum > targetSum && startIndex <= endIndex)
                     {
                         sum -= array[startIndex];
                         startIndex++;

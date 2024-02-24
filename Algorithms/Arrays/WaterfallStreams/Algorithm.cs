@@ -5,11 +5,11 @@ using System.Xml.XPath;
 
 namespace Algorithms.Arrays.WaterfallStreams
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static double[] WaterfallStreams(double[][] array, int source)
+        public static double[ ] Run(double[ ][ ] array, int source)
         {
-            if ( array == null )
+            if(array == null)
             {
                 return null;
             }
@@ -25,25 +25,25 @@ namespace Algorithms.Arrays.WaterfallStreams
             var startingRow = 1;
             result[source] = 100;
 
-            while (startingRow < lastRowIndex && waterFallSources.Count > 0)
+            while(startingRow < lastRowIndex && waterFallSources.Count > 0)
             {
                 var currentWaterFallSources = new List<int>();
-                foreach (var wfSource in waterFallSources)
+                foreach(var wfSource in waterFallSources)
                 {
                     currentWaterFallSources.Add(wfSource);
                 }
 
-                foreach (var waterFallSource in currentWaterFallSources)
-                { 
-                    if (array[startingRow][waterFallSource] == 1)
+                foreach(var waterFallSource in currentWaterFallSources)
+                {
+                    if(array[startingRow][waterFallSource] == 1)
                     {
                         var waterFallPercentage = result[waterFallSource];
                         result[waterFallSource] = 0;
-						_ = waterFallSources.Remove(waterFallSource);                        
+                        _ = waterFallSources.Remove(waterFallSource);
                         var newSourceLeft = waterFallSource - 1;
                         var newSourceRight = waterFallSource + 1;
 
-                        while (newSourceLeft >= 0)
+                        while(newSourceLeft >= 0)
                         {
                             if(array[startingRow - 1][newSourceLeft] == 1)
                             {
@@ -52,7 +52,7 @@ namespace Algorithms.Arrays.WaterfallStreams
                             if(array[startingRow - 1][newSourceLeft] == 0 && array[startingRow][newSourceLeft] == 0)
                             {
                                 waterFallSources.Add(newSourceLeft);
-                                result[newSourceLeft] = result[newSourceLeft] + (waterFallPercentage - (waterFallPercentage / 2));
+                                result[newSourceLeft] = result[newSourceLeft] + ( waterFallPercentage -  (waterFallPercentage / 2)  );
                                 break;
                             }
 
@@ -66,10 +66,10 @@ namespace Algorithms.Arrays.WaterfallStreams
                                 break;
                             }
 
-                            if (array[startingRow - 1][newSourceRight] == 0 && array[startingRow][newSourceRight] == 0)
+                            if(array[startingRow - 1][newSourceRight] == 0 && array[startingRow][newSourceRight] == 0)
                             {
                                 waterFallSources.Add(newSourceRight);
-                                result[newSourceRight] = result[newSourceRight] + (waterFallPercentage - (waterFallPercentage / 2));
+                                result[newSourceRight] = result[newSourceRight] + ( waterFallPercentage -  (waterFallPercentage / 2)  );
                                 break;
                             }
 
