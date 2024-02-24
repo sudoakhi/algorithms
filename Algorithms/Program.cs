@@ -6,7 +6,7 @@ namespace Algorithms
     {
         public static void Main()
         {
-            DP.MaxSubsetSumNoAdjacent.Runner.Run();
+            DP.NumberOfWaysToMakeChange.Runner.Run();
             _ = Console.ReadKey();
         }
     }

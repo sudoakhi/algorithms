@@ -12,7 +12,7 @@ namespace Algorithms.DP.MaxSubsetSumNoAdjacent
 {
     internal static class Runner
     {
-        public static void Run()
+        internal static void Run()
         {
             //This should output 330
             int[] array = [75, 105, 120, 75, 90, 135];

@@ -14,7 +14,7 @@ namespace Algorithms.DP.MaxSubsetSumNoAdjacent
     {
         // Time Compexity = O(N), N = Length of the array
         // Space Complexity = O(1)
-        public static int MaxSubsetSumNoAdjacent(int[ ] array)
+        internal static int MaxSubsetSumNoAdjacent(int[ ] array)
         {
             if(array == null || array.Length == 0)
             {
