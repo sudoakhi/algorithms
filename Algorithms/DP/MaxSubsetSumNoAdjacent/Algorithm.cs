@@ -10,25 +10,25 @@ using System.Threading.Tasks;
 
 namespace Algorithms.DP.MaxSubsetSumNoAdjacent
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
         // Time Compexity = O(N), N = Length of the array
         // Space Complexity = O(1)
-        internal static int MaxSubsetSumNoAdjacent(int[ ] array)
+        public static int Run(int[ ] array)
         {
             if(array == null || array.Length == 0)
             {
                 return 0;
             }
 
-            if(array.Length == 1 )
+            if(array.Length == 1)
             {
                 return array[0];
             }
-            
+
             var first = array[0];
             var second = GetMax(array[0], array[1]);
-            for(var i=2; i<array.Length; i++)
+            for(var i = 2; i < array.Length; i++)
             {
                 var current = GetMax(second, first + array[i]);
                 first = second;

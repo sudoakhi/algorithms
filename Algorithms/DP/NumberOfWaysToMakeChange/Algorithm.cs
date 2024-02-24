@@ -10,18 +10,23 @@ using System.Threading.Tasks;
 
 namespace Algorithms.DP.NumberOfWaysToMakeChange
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        // Speace Complexity = O(N) where N is equal to targetMoney
+        // Space Complexity = O(N) where N is equal to targetMoney
         // Time Complexity = O(N*D) where N is equal to targetMoney and D is equal to number of denominations
-        internal static int NumberOfWaysToMakeChange(int targetMoney, int[] coinDenominations)
+        public static int Run(int targetMoney, int[ ] coinDenominations)
         {
+            if(coinDenominations == null || coinDenominations.Length == 0)
+            {
+                return 0;
+            }
+
             var numOfWays = new int[targetMoney+1];
             numOfWays[0] = 1;
 
-            foreach (var coin in coinDenominations)
+            foreach(var coin in coinDenominations)
             {
-                for(var amount = 1; amount < targetMoney + 1; amount++) 
+                for(var amount = 1; amount < targetMoney + 1; amount++)
                 {
                     if(coin <= amount)
                     {
