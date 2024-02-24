@@ -6,7 +6,7 @@ namespace Algorithms
     {
         public static void Main()
         {
-            Trie.SuffixTrieMultiStringSearch.Runner.Run();
+            DP.MaxSubsetSumNoAdjacent.Runner.Run();
             _ = Console.ReadKey();
         }
     }
