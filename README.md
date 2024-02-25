@@ -30,13 +30,14 @@ The repository is organized into different categories based on the type of probl
 - Binary Tree Algorithms [BT]
 - Binary Search Tree Algorithms [BST]
 - Greedy Algorithms
+- Trie Algorithms
 - And more...
 
 Each category contains multiple problems and solutions in C#.
 
-## Explore
+## Explore and Run
 
-Look for Runner class in each problem directory. Provide inputs and validate exptected outputs by invoking the Run() method from Program.cs
+Run Test Cases from Algorithms.Tests project corresponding to each algorithm in Algorithms project
 
 ## Contributing
 
