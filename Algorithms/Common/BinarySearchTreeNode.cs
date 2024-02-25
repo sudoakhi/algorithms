@@ -4,17 +4,17 @@ using System.Text;
 
 namespace Algorithms.Common
 {
-    internal sealed class BinarySearchTreeNode
+   public class BinarySearchTreeNode
     {
-        internal int _data;
-        internal BinarySearchTreeNode _left;
-        internal BinarySearchTreeNode _right;
+        public int Value { get; set; }
+        internal BinarySearchTreeNode Left { get; set; }
+        internal BinarySearchTreeNode Right { get; set; }
 
-        public BinarySearchTreeNode(int data)
+        public BinarySearchTreeNode(int value)
         {
-            _data = data;
-            _left = null;
-            _right = null;
+            Value = value;
+            Left = null;
+            Right = null;
         }
     }
 }

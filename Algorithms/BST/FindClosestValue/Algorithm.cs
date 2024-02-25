@@ -6,36 +6,36 @@ using System.Xml.Linq;
 
 namespace Algorithms.BST.FindClosestValue
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int FindClosestValueInBst(BinarySearchTreeNode root, int target)
+        public static int Run(BinarySearchTreeNode root, int target)
         {
             if(root == null)
             {
                 return -1;
             }
 
-            if(root._right == null && root._left == null) 
+            if(root.Right == null && root.Left == null)
             {
-                return root._data;
+                return root.Value;
             }
 
             var minTargetDifference = int.MaxValue;
             var targetNode = root;
             var currentNode = root;
-            while (currentNode != null)
+            while(currentNode != null)
             {
-                var targetDifference = Math.Abs(target - currentNode._data);
+                var targetDifference = Math.Abs(target - currentNode.Value);
                 if(targetDifference < minTargetDifference)
                 {
                     minTargetDifference = targetDifference;
                     targetNode = currentNode;
                 }
 
-                currentNode = target < currentNode._data ? currentNode._left : currentNode._right;
-                }
+                currentNode = target < currentNode.Value ? currentNode.Left : currentNode.Right;
+            }
 
-            return targetNode._data;
+            return targetNode.Value;
         }
     }
 }

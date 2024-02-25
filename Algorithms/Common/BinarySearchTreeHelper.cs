@@ -4,16 +4,21 @@ using System.Text;
 
 namespace Algorithms.Common
 {
-    internal static class BinarySearchTreeHelper
+    public static class BinarySearchTreeHelper
     {
-        internal static void Insert(BinarySearchTree binarySearchTree, int data)
+        public static void Insert(BinarySearchTree binarySearchTree, int data)
         {
-            var rootNode = binarySearchTree._root;
+            if(binarySearchTree == null)
+            {
+                return;
+            }
+
+            var rootNode = binarySearchTree.Root;
             var newNode = new BinarySearchTreeNode(data);
 
             if (rootNode == null)
             {
-                binarySearchTree._root = newNode;
+                binarySearchTree.Root = newNode;
             }
             else
             {
@@ -21,22 +26,22 @@ namespace Algorithms.Common
                 while (true)
                 {
                     var parentNode = currentNode;
-                    if (newNode._data < currentNode._data)
+                    if (newNode.Value < currentNode.Value)
                     {
-                        currentNode = currentNode._left;
+                        currentNode = currentNode.Left;
                         if ( currentNode != null )
                         {
                             continue;
                         }
-                        parentNode._left = newNode;
+                        parentNode.Left = newNode;
                         return;
                     }
                     else
                     {
-                        currentNode = currentNode._right;
+                        currentNode = currentNode.Right;
                         if (currentNode == null)
                         {
-                            parentNode._right = newNode;
+                            parentNode.Right = newNode;
                             return;
                         }
                     }
@@ -44,16 +49,16 @@ namespace Algorithms.Common
             }
         }
 
-        internal static void InOrderTraversal(BinarySearchTreeNode root)
+        public static void InOrderTraversal(BinarySearchTreeNode root)
         {
             if (root == null)
             {
                 return;
             }
 
-            InOrderTraversal(root._left);
-            Console.Write(root._data + " ");
-            InOrderTraversal(root._right);
+            InOrderTraversal(root.Left);
+            Console.Write(root.Value + " ");
+            InOrderTraversal(root.Right);
         }
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Algorithms.Greedy.MinimumWaitingTime
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-
-        internal static int MinimumWaitingTime(int[] queries)
+        public static int Run(int[ ] queries)
         {
             if(queries != null)
             {
@@ -15,7 +14,7 @@ namespace Algorithms.Greedy.MinimumWaitingTime
                 Array.Sort(queries);
                 var minWaitingTime = new int[queries.Length];
                 minWaitingTime[0] = 0;
-                for ( var i = 1; i < queries.Length; i++ )
+                for(var i = 1; i < queries.Length; i++)
                 {
                     minWaitingTime[i] = minWaitingTime[i - 1] + queries[i - 1];
                     minTime += minWaitingTime[i];

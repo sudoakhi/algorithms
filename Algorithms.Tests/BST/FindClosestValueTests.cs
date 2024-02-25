@@ -1,13 +1,22 @@
-﻿using Algorithms.Common;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Algorithms.Common;
+using Algorithms.BST.FindClosestValue;
 
-namespace Algorithms.BST.FindClosestValue
+namespace Algorithms.Tests.BST
 {
-    internal static class Runner
+    [TestClass]
+    public class FindClosestValueTests
     {
-        internal static void Run()
+        [TestMethod]
+        public void TestCase1()
         {
             var binarySearchTree = new BinarySearchTree();
             BinarySearchTreeHelper.Insert(binarySearchTree, 10);
@@ -20,13 +29,9 @@ namespace Algorithms.BST.FindClosestValue
             BinarySearchTreeHelper.Insert(binarySearchTree, 1);
             BinarySearchTreeHelper.Insert(binarySearchTree, 14);
 
-            // This should output: 1 2 5 5 10 13 14 15 22
-            BinarySearchTreeHelper.InOrderTraversal(binarySearchTree._root);
-            Console.WriteLine();
-
-            //This should output 13
-            var closestValueInBST = Algorithm.FindClosestValueInBst(binarySearchTree._root, 12);
-            Console.WriteLine(closestValueInBST);
+            var expected = 13;
+            var actual = Algorithm.Run(binarySearchTree.Root, 12);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

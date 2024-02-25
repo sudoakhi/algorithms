@@ -4,8 +4,13 @@ using System.Text;
 
 namespace Algorithms.Common
 {
-    internal sealed class BinarySearchTree
+    public class BinarySearchTree
     {
-        internal BinarySearchTreeNode _root;
+        public BinarySearchTreeNode Root { get; set; }
+
+        public BinarySearchTree()
+        {
+            Root = null;
+        }
     }
 }
