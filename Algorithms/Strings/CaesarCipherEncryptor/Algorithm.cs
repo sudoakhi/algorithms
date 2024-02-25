@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Algorithms.Strings.CaesarCipherEncryptor
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static string CaesarCypherEncryptor(string str, int key)
+        public static string Run(string str, int key)
         {
             if (str != null)
             {

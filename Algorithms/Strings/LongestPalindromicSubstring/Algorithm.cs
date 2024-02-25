@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Algorithms.Strings.LongestPalindromicSubstring
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static string LongestPalindromicSubstring(string str)
+        public static string Run(string str)
         {
             var maxLength = -1;
             var palindromeStartIndex = -1;
