@@ -4,14 +4,15 @@ using System.Text;
 
 namespace Algorithms.Trie
 {
-    internal sealed class SuffixTrie
+    public class SuffixTrie
     {
-        internal SuffixTrieNode _root;
-        internal char _endSymbol = '*';
+        public SuffixTrieNode Root { get; set; }
+        public char EndSymbol { get; set; }
 
         public SuffixTrie()
         {
-            _root = new SuffixTrieNode( );
+            Root = new SuffixTrieNode( );
+            EndSymbol = '*';
         }
     }
 }

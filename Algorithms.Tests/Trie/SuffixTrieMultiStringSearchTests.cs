@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
 
-namespace Algorithms.Trie.SuffixTrieMultiStringSearch
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Algorithms.Trie;
+using Algorithms.Trie.SuffixTrieMultiStringSearch;
+
+namespace Algorithms.Tests.Trie
 {
-    internal static class Runner
+    [TestClass]
+    public class SuffixTrieMultiStringSearchTests
     {
-        public static void Run()
+        [TestMethod]
+        public void TestCase1()
         {
             var trie = new SuffixTrie();
             var bigString = "abcdefghijklmnopqrstuvwxyz";
@@ -24,17 +34,17 @@ namespace Algorithms.Trie.SuffixTrieMultiStringSearch
             }
 
             string[] smallerString = ["abc", "mnopqr", "wyz", "no", "e", "tuuv"];
-            var resultArray = new bool[smallerString.Length];
-
-            for(var i= 0; i < smallerString.Length; i++)
+            bool[] expected = [true, true, false, true, true, false];
+            var actual = new bool[smallerString.Length];
+            for(var i = 0; i < smallerString.Length; i++)
             {
                 if(Algorithm.Contains(trie, smallerString[i]))
                 {
-                    resultArray[i] = true;
+                    actual[i] = true;
                 }
             }
 
-            Console.WriteLine(string.Join(", ", resultArray));
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }

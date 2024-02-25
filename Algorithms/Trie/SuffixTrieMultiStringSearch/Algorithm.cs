@@ -4,28 +4,28 @@ using System.Text;
 
 namespace Algorithms.Trie.SuffixTrieMultiStringSearch
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static void Insert(SuffixTrie trie, string str)
+        public static void Insert(SuffixTrie trie, string str)
         {
             if(str != null)
             {
-                for (var i = 0; i < str.Length; i++)
+                for(var i = 0; i < str.Length; i++)
                 {
                     InsertHelper(trie, i, str);
                 }
             }
         }
 
-        internal static bool Contains(SuffixTrie trie, string str)
+        public static bool Contains(SuffixTrie trie, string str)
         {
             if(trie != null && str != null)
             {
-                var currentNode = trie._root;
-                for (var i = 0; i < str.Length; i++)
+                var currentNode = trie.Root;
+                for(var i = 0; i < str.Length; i++)
                 {
                     var character = str[i];
-                    if (!currentNode._children.TryGetValue(character, out var value))
+                    if(!currentNode.Children.TryGetValue(character, out var value))
                     {
                         return false;
                     }
@@ -37,9 +37,9 @@ namespace Algorithms.Trie.SuffixTrieMultiStringSearch
             return true;
         }
 
-        internal static void InsertHelper(SuffixTrie trie, int i, string str)
+        public static void InsertHelper(SuffixTrie trie, int i, string str)
         {
-            if (trie == null)
+            if(trie == null)
             {
                 return;
             }
@@ -49,15 +49,15 @@ namespace Algorithms.Trie.SuffixTrieMultiStringSearch
                 return;
             }
 
-            var currentNode = trie._root;
-            for(var j=i; j < str.Length; j++)
+            var currentNode = trie.Root;
+            for(var j = i; j < str.Length; j++)
             {
                 var character = str[j];
-                if(!currentNode._children.TryGetValue(character , out var value) )
+                if(!currentNode.Children.TryGetValue(character, out var value))
                 {
                     var newNode = new SuffixTrieNode();
                     value = newNode;
-                    currentNode._children.Add(character, value);
+                    currentNode.Children.Add(character, value);
                 }
 
                 currentNode = value;

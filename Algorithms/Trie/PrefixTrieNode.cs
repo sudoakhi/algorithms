@@ -4,48 +4,19 @@ using System.Text;
 
 namespace Algorithms.Trie
 {
-    internal sealed class PrefixTrieNode
+    public class PrefixTrieNode
     {
-        internal char _value;
-        internal List<PrefixTrieNode> _children;
-        internal int _depth;
-        internal PrefixTrieNode _parent;
+        public char Value { get; set; }
+        public List<PrefixTrieNode> Children { get; }
+        public int Depth { get; set; }
+        public PrefixTrieNode Parent { get; set; }
 
         public PrefixTrieNode(char value, int depth, PrefixTrieNode parent)
         {
-            _value = value;
-            _children = [ ];
-            _depth = depth;
-            _parent = parent;
-        }
-
-        public bool IsLeaf()
-        {
-            return _children.Count == 0;
-        }
-
-        public PrefixTrieNode FindChildNode(char c)
-        {
-            foreach(var trieNode in _children)
-            {
-                if(trieNode._value == c)
-                {
-                    return trieNode;
-                }
-            }
-
-            return null;
-        }
-
-        public void DeleteChildNode(char c)
-        {
-            for(var i = 0; i < _children.Count; i++)
-            {
-                if(_children[i]._value == c)
-                {
-                    _children.RemoveAt(i);
-                }
-            }
+            Value = value;
+            Children = [];
+            Depth = depth;
+            Parent = parent;
         }
     }
 }
