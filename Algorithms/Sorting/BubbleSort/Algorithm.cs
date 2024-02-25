@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Algorithms.Sorting.BubbleSort
 {
-    internal static class Algorithm
+   public static class Algorithm
     {
-        internal static int[] BubbleSort(int[] array)
+        public static int[] Run(int[] array)
         {
             if(array != null)
             {

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Algorithms.Sorting.InsertionSort
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int[] InsertionSort(int[] array)
+        public static int[] Run(int[] array)
         {
             if (array != null)
             {
