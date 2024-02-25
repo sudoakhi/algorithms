@@ -1,15 +1,23 @@
-﻿using Algorithms.Common;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Algorithms.Common;
+using Algorithms.BT.EvaluateExpressionTree;
 
-namespace Algorithms.BT.EvaluateExpressionTree
+namespace Algorithms.Tests.BT
 {
-    internal static class Runner
+    [TestClass]
+    public class EvaluateExpressionTreeTests
     {
-        internal static void Run()
+        [TestMethod]
+        public void TestCase1()
         {
-            // Generate a Binary Tree
             var binaryTree = new BinaryTree();
             BinaryTreeHelper.Insert(binaryTree, -1);
             BinaryTreeHelper.Insert(binaryTree, -2);
@@ -21,9 +29,9 @@ namespace Algorithms.BT.EvaluateExpressionTree
             BinaryTreeHelper.Insert(binaryTree, 2);
             BinaryTreeHelper.Insert(binaryTree, 3);
 
-            // This should result 6
-            var result = Algorithm.EvaluateExpressionTree(binaryTree._root);
-            Console.WriteLine(result);
+            var expected = 6;
+            var actual = Algorithm.Run(binaryTree.Root);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -5,31 +5,33 @@ using System.Text;
 
 namespace Algorithms.BT.EvaluateExpressionTree
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int EvaluateExpressionTree(BinaryTreeNode root)
+        public static int Run(BinaryTreeNode root)
         {
             if(root == null)
             {
                 return 0;
             }
 
-            if (root._value >= 0)
+            if(root.Value >= 0)
             {
-                return root._value;
+                return root.Value;
             }
 
-            var leftValue = EvaluateExpressionTree(root._left);
-            var rightValue = EvaluateExpressionTree(root._right);
-            if(root._value == -1)
+            var leftValue = Run(root.Left);
+            var rightValue = Run(root.Right);
+            if(root.Value == -1)
             {
                 return leftValue + rightValue;
-            } else if(root._value == -2) 
+            }
+            else if(root.Value == -2)
             {
                 return leftValue - rightValue;
-            } else if(root._value == -3)
+            }
+            else if(root.Value == -3)
             {
-                return leftValue/rightValue;
+                return leftValue / rightValue;
             }
             return leftValue * rightValue;
         }

@@ -4,53 +4,58 @@ using System.Text;
 
 namespace Algorithms.Common
 {
-    internal static class BinaryTreeHelper
+    public static class BinaryTreeHelper
     {
-        internal static void Insert(BinaryTree binaryTree, int value)
+        public static void Insert(BinaryTree binaryTree, int value)
         {
+            if(binaryTree == null)
+            {
+                return;
+            }
+
             var newBinaryTreeNode = new BinaryTreeNode(value);
 
-            if (binaryTree._root == null)
+            if (binaryTree.Root == null)
             {
-                binaryTree._root = newBinaryTreeNode;
+                binaryTree.Root = newBinaryTreeNode;
                 return;
             }
 
             var nodeQueue = new Queue<BinaryTreeNode>();
-            nodeQueue.Enqueue(binaryTree._root);
+            nodeQueue.Enqueue(binaryTree.Root);
             while (nodeQueue.Count > 0)
             {
                 var currentNode = nodeQueue.Dequeue();
-                if (currentNode._left == null)
+                if (currentNode.Left == null)
                 {
-                    newBinaryTreeNode._parent = currentNode;
-                    currentNode._left = newBinaryTreeNode;
+                    newBinaryTreeNode.Parent = currentNode;
+                    currentNode.Left = newBinaryTreeNode;
                     return;
                 }
-                else if (currentNode._right == null)
+                else if (currentNode.Right == null)
                 {
-                    newBinaryTreeNode._parent = currentNode;
-                    currentNode._right = newBinaryTreeNode;
+                    newBinaryTreeNode.Parent = currentNode;
+                    currentNode.Right = newBinaryTreeNode;
                     return;
                 }
                 else
                 {
-                    nodeQueue.Enqueue(currentNode._left);
-                    nodeQueue.Enqueue(currentNode._right);
+                    nodeQueue.Enqueue(currentNode.Left);
+                    nodeQueue.Enqueue(currentNode.Right);
                 }
             }
         }
 
-        internal static void RecursiveInorderTraversal(BinaryTreeNode binaryTreeNode)
+        public static void RecursiveInorderTraversal(BinaryTreeNode binaryTreeNode)
         {
             if (binaryTreeNode == null)
             {
                 return;
             }
 
-            RecursiveInorderTraversal(binaryTreeNode._left);
-            Console.Write(binaryTreeNode._value + " ");
-            RecursiveInorderTraversal(binaryTreeNode._right);
+            RecursiveInorderTraversal(binaryTreeNode.Left);
+            Console.Write(binaryTreeNode.Value + " ");
+            RecursiveInorderTraversal(binaryTreeNode.Right);
         }
     }
 }

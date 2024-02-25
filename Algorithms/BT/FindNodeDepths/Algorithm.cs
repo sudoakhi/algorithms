@@ -6,18 +6,18 @@ using System.Text;
 
 namespace Algorithms.BT.FindNodeDepths
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int GetNodeDepths(BinaryTreeNode root)
+        public static int Run(BinaryTreeNode root)
         {
             if(root == null)
             {
                 return 0;
             }
 
-            if (root._left == null && root._right == null)
+            if(root.Left == null && root.Right == null)
             {
-              return 1;
+                return 1;
             }
 
             var sumOfDepths = 0;
@@ -33,13 +33,13 @@ namespace Algorithms.BT.FindNodeDepths
                 while(numOfNodes > 0)
                 {
                     var node = nodeQueue.Dequeue();
-                    if (node._left != null)
+                    if(node.Left != null)
                     {
-                        nodeQueue.Enqueue(node._left);
+                        nodeQueue.Enqueue(node.Left);
                     }
-                    if (node._right != null)
+                    if(node.Right != null)
                     {
-                        nodeQueue.Enqueue(node._right);
+                        nodeQueue.Enqueue(node.Right);
                     }
 
                     numOfNodes--;
@@ -48,7 +48,6 @@ namespace Algorithms.BT.FindNodeDepths
                 nodeDepth++;
             }
 
-            
             return sumOfDepths;
         }
     }

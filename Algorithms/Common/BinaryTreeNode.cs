@@ -1,18 +1,18 @@
 ﻿namespace Algorithms.Common
 {
-    internal sealed class BinaryTreeNode
+    public class BinaryTreeNode
     {
-        internal int _value;
-        internal BinaryTreeNode _parent;
-        internal BinaryTreeNode _left;
-        internal BinaryTreeNode _right;
+        public int Value { get; set; }
+        public BinaryTreeNode Parent { get; set; }
+        public BinaryTreeNode Left { get; set; }
+        public BinaryTreeNode Right { get; set; }
 
         public BinaryTreeNode(int value)
         {
-            _value = value;
-            _parent = null;
-            _left = null;
-            _right = null;
+            Value = value;
+            Parent = null;
+            Left = null;
+            Right = null;
         }
     }
 }

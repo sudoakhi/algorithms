@@ -1,15 +1,23 @@
-﻿using Algorithms.Common;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Algorithms.Common;
+using Algorithms.BT.FindNodeDepths;
 
-namespace Algorithms.BT.FindNodeDepths
+namespace Algorithms.Tests.BT
 {
-    internal static class Runner
+    [TestClass]
+    public class FindNodeDepthsTests
     {
-        internal static void Run()
+        [TestMethod]
+        public void TestCase1()
         {
-            // Generate a Binary Tree
             var binaryTree = new BinaryTree();
             BinaryTreeHelper.Insert(binaryTree, 1);
             BinaryTreeHelper.Insert(binaryTree, 2);
@@ -21,13 +29,9 @@ namespace Algorithms.BT.FindNodeDepths
             BinaryTreeHelper.Insert(binaryTree, 8);
             BinaryTreeHelper.Insert(binaryTree, 9);
 
-            //This should output : 8 4 9 2 5 1 6 3             
-            BinaryTreeHelper.RecursiveInorderTraversal(binaryTree._root);
-            Console.WriteLine();
-
-            //This should output 16
-            var result = Algorithm.GetNodeDepths(binaryTree._root);
-            Console.WriteLine(result);
+            var expected = 16;
+            var actual = Algorithm.Run(binaryTree.Root);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
