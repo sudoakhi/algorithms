@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Algorithms.Trie
 {
-    internal sealed class PrefixTrie
+    public class PrefixTrie
     {
-        internal PrefixTrieNode _root;
+        public PrefixTrieNode Root { get; set; }
 
         public PrefixTrie()
         {
-            _root = new PrefixTrieNode('^', 0, null);
+            Root = new PrefixTrieNode('^', 0, null);
         }
     }
 }

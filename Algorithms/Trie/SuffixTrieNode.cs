@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Algorithms.Trie
 {
-    internal sealed class SuffixTrieNode
+    public class SuffixTrieNode
     {
-        internal Dictionary<char, SuffixTrieNode> _children;
+        public Dictionary<char, SuffixTrieNode> Children {  get; }
 
         public SuffixTrieNode()
         {
-            _children = [ ];
+            Children = [];
         }
     }
 }
