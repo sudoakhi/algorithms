@@ -175,7 +175,7 @@ dotnet_style_parentheses_in_other_operators = never_if_unnecessary:error
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:error
 dotnet_diagnostic.CA1000.severity = error
 dotnet_diagnostic.CA1001.severity = error
-dotnet_diagnostic.CA1002.severity = error
+dotnet_diagnostic.CA1002.severity = warning
 dotnet_diagnostic.CA1003.severity = error
 dotnet_diagnostic.CA1005.severity = error
 dotnet_diagnostic.CA1008.severity = error
@@ -486,18 +486,18 @@ csharp_style_conditional_delegate_call = true:error
 csharp_style_prefer_extended_property_pattern = true:error
 
 # Space preferences
-csharp_space_after_cast = true
+csharp_space_after_cast = false
 csharp_space_after_colon_in_inheritance_clause = true
 csharp_space_after_comma = true
 csharp_space_after_dot = false
-csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_after_keywords_in_control_flow_statements = false
 csharp_space_after_semicolon_in_for_statement = true
 csharp_space_around_binary_operators = before_and_after
 csharp_space_around_declaration_statements = ignore
 csharp_space_before_colon_in_inheritance_clause = false
-csharp_space_before_comma = true
+csharp_space_before_comma = false
 csharp_space_before_dot = false
-csharp_space_before_open_square_brackets = true
+csharp_space_before_open_square_brackets = false
 csharp_space_before_semicolon_in_for_statement = false
 csharp_space_between_empty_square_brackets = true
 csharp_space_between_method_call_empty_parameter_list_parentheses = true
@@ -506,8 +506,8 @@ csharp_space_between_method_call_parameter_list_parentheses = false
 csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
 csharp_space_between_method_declaration_name_and_open_parenthesis = false
 csharp_space_between_method_declaration_parameter_list_parentheses = false
-csharp_space_between_parentheses = expressions,type_casts,control_flow_statements
-csharp_space_between_square_brackets = true
+csharp_space_between_parentheses = expressions
+csharp_space_between_square_brackets = false
 
 # Blocks are allowed
 csharp_prefer_braces = true:error

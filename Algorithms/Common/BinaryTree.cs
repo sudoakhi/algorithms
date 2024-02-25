@@ -1,7 +1,12 @@
 ﻿namespace Algorithms.Common
 {
-    internal sealed class BinaryTree
+    public class BinaryTree
     {
-        internal BinaryTreeNode _root;
+        public BinaryTreeNode Root { get; set; }
+
+        public BinaryTree()
+        {
+            Root = null;
+        }
     }
 }
