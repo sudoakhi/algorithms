@@ -5,65 +5,86 @@ using System.Xml.Linq;
 
 namespace Algorithms.LL
 {
-    internal static class SingleLinkedListHelper
+    public static class SingleLinkedListHelper
     {
-        internal static void InsertFront(SingleLinkedList singleLinkedList, int newData)
+        public static void InsertFront(SingleLinkedList singleLinkedList, int newData)
         {
+            if(singleLinkedList == null)
+            {
+                return;
+            }
+
             var newNode = new SingleLinkedListNode(newData)
             {
-                _next = singleLinkedList._head
+                Next = singleLinkedList.Head
             };
-            singleLinkedList._head = newNode;
+            singleLinkedList.Head = newNode;
         }
 
-        internal static void InsertLast(SingleLinkedList singleLinkedList, int newData)
+        public static void InsertLast(SingleLinkedList singleLinkedList, int newData)
         {
+            if(singleLinkedList == null)
+            {
+                return;
+            }
+
             var newNode = new SingleLinkedListNode(newData);
-            var temp = singleLinkedList._head;
+            var temp = singleLinkedList.Head;
             if(temp == null)
             {
-                singleLinkedList._head = newNode;
+                singleLinkedList.Head = newNode;
                 return;
             }
 
-            while(temp._next != null)
+            while(temp.Next != null)
             {
-                temp = temp._next;
+                temp = temp.Next;
             }
 
-            temp._next = newNode;
+            temp.Next = newNode;
         }
 
-        internal static void DeleteNodeByKey(SingleLinkedList singleLinkedList, int key)
+        public static void DeleteNodeByKey(SingleLinkedList singleLinkedList, int key)
         {
-            var temp = singleLinkedList._head;
+            if(singleLinkedList == null)
+            {
+                return;
+            }
+
+            var temp = singleLinkedList.Head;
             SingleLinkedListNode previousNode = null;
 
-            if(temp != null && temp._value == key)
+            if(temp != null && temp.Value == key)
             {
-                singleLinkedList._head = temp._next;
+                singleLinkedList.Head = temp.Next;
                 return;
             }
 
-            while(temp != null && temp._value != key)
+            while(temp != null && temp.Value != key)
             {
                 previousNode = temp;
-                temp = temp._next;
+                temp = temp.Next;
             }
 
-            previousNode._next = temp._next;
+            previousNode.Next = temp.Next;
         }
 
-        internal static void Traverse(SingleLinkedList singleLinkedList)
+        public static List<int> Traverse(SingleLinkedList singleLinkedList)
         {
-            var temp = singleLinkedList._head;
-            while(temp != null)
+            var values = new List<int>();
+            if(singleLinkedList == null)
             {
-                Console.Write(temp._value + " ");
-                temp = temp._next;
+                return null;
             }
 
-            Console.WriteLine( );
+            var temp = singleLinkedList.Head;
+            while(temp != null)
+            {
+                values.Add(temp.Value);
+                temp = temp.Next;
+            }
+
+            return values;
         }
     }
 }

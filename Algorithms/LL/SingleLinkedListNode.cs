@@ -4,15 +4,15 @@ using System.Text;
 
 namespace Algorithms.LL
 {
-    internal sealed class SingleLinkedListNode
+    public class SingleLinkedListNode
     {
-        internal int _value;
-        internal SingleLinkedListNode _next;
+        public int Value { get; set; }
+        public SingleLinkedListNode Next { get; set; }
 
         public SingleLinkedListNode(int value)
         {
-            _value = value;
-            _next = null;
+            Value = value;
+            Next = null;
         }
     }
 }

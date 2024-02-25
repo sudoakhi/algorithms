@@ -4,8 +4,13 @@ using System.Text;
 
 namespace Algorithms.LL
 {
-    internal sealed class SingleLinkedList
+    public class SingleLinkedList
     {
-        internal SingleLinkedListNode _head;
+        public SingleLinkedListNode Head { get; set; }
+
+        public SingleLinkedList()
+        {
+            Head = null;
+        }
     }
 }
