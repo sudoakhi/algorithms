@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Algorithms.Stack.NextGreaterElement
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
-        internal static int[] NextGreaterElement(int[] array)
+        public static int[] Run(int[] array)
         {
             if(array != null)
             {

@@ -5,17 +5,17 @@ using System.Text;
 
 namespace Algorithms.Stack.MinMaxStackConstruction
 {
-    internal static class Algorithm
+    public static class Algorithm
     {
         private static readonly List<int> s_stack = [];
         private static readonly List<int> s_minStack = [];
         private static readonly List<int> s_maxStack = [];
-        internal static int Peek()
+        public static int Peek()
         {
             return s_stack.Count == 0 ? -1 : s_stack[^1];
         }
 
-        internal static int Pop()
+        public static int Pop()
         {
             if (s_stack.Count == 0)
             {
@@ -29,7 +29,7 @@ namespace Algorithms.Stack.MinMaxStackConstruction
             return value;
         }
 
-        internal static void Push(int number)
+        public static void Push(int number)
         {
             s_stack.Add(number);
             if(s_minStack.Count == 0)
@@ -66,12 +66,12 @@ namespace Algorithms.Stack.MinMaxStackConstruction
             }
         }
 
-        internal static int CurrentMinimum()
+        public static int CurrentMinimum()
         {
             return s_minStack.Count == 0 ? -1 : s_minStack[^1];
         }
 
-        internal static int CurrentMaximum()
+        public static int CurrentMaximum()
         {
             return s_maxStack.Count == 0 ? -1 : s_maxStack[^1];
         }
