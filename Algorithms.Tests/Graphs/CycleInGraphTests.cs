@@ -1,13 +1,22 @@
-﻿using Algorithms.Common;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Algorithms.Graphs;
+using Algorithms.Graphs.CycleInGraph;
 
-namespace Algorithms.Graphs.CycleInGraph
+namespace Algorithms.Tests.Graphs
 {
-    internal static class Runner
+    [TestClass]
+    public class CycleInGraphTests
     {
-        internal static void Run()
+        [TestMethod]
+        public void TestCase1()
         {
             var edge1 = new Edge("0", "1", 0);
             var edge2 = new Edge("0", "3", 0);
@@ -35,9 +44,9 @@ namespace Algorithms.Graphs.CycleInGraph
             };
 
             var graph = new Graph(edgeList);
-            //This should return true
-            var isCycle = Algorithm.CycleInGraph(graph);
-            Console.WriteLine(isCycle);
+            var expected = true;
+            var actual = Algorithm.Run(graph);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

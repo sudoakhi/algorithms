@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.Trie
 {
     internal sealed class PrefixTrie
     {

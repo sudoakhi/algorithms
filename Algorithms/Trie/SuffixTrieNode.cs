@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.Trie
 {
     internal sealed class SuffixTrieNode
     {

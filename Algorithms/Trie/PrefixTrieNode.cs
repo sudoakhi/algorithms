@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.Trie
 {
     internal sealed class PrefixTrieNode
     {
@@ -14,7 +14,7 @@ namespace Algorithms.Common
         public PrefixTrieNode(char value, int depth, PrefixTrieNode parent)
         {
             _value = value;
-            _children = [];
+            _children = [ ];
             _depth = depth;
             _parent = parent;
         }
@@ -26,9 +26,9 @@ namespace Algorithms.Common
 
         public PrefixTrieNode FindChildNode(char c)
         {
-            foreach (var trieNode in _children)
+            foreach(var trieNode in _children)
             {
-                if (trieNode._value == c)
+                if(trieNode._value == c)
                 {
                     return trieNode;
                 }
@@ -39,9 +39,9 @@ namespace Algorithms.Common
 
         public void DeleteChildNode(char c)
         {
-            for(var i=0; i< _children.Count; i++)
+            for(var i = 0; i < _children.Count; i++)
             {
-                if (_children[i]._value == c)
+                if(_children[i]._value == c)
                 {
                     _children.RemoveAt(i);
                 }

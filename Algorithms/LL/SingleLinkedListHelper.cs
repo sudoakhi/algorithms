@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Algorithms.Common
+namespace Algorithms.LL
 {
     internal static class SingleLinkedListHelper
     {
@@ -20,13 +20,13 @@ namespace Algorithms.Common
         {
             var newNode = new SingleLinkedListNode(newData);
             var temp = singleLinkedList._head;
-            if (temp == null)
+            if(temp == null)
             {
                 singleLinkedList._head = newNode;
                 return;
             }
 
-            while (temp._next != null)
+            while(temp._next != null)
             {
                 temp = temp._next;
             }
@@ -39,13 +39,13 @@ namespace Algorithms.Common
             var temp = singleLinkedList._head;
             SingleLinkedListNode previousNode = null;
 
-            if (temp != null && temp._value == key)
+            if(temp != null && temp._value == key)
             {
                 singleLinkedList._head = temp._next;
                 return;
             }
 
-            while (temp != null && temp._value != key)
+            while(temp != null && temp._value != key)
             {
                 previousNode = temp;
                 temp = temp._next;
@@ -57,13 +57,13 @@ namespace Algorithms.Common
         internal static void Traverse(SingleLinkedList singleLinkedList)
         {
             var temp = singleLinkedList._head;
-            while (temp != null)
+            while(temp != null)
             {
                 Console.Write(temp._value + " ");
                 temp = temp._next;
             }
 
-            Console.WriteLine();
+            Console.WriteLine( );
         }
     }
 }

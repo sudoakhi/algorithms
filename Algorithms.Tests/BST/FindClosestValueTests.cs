@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithms.Common;
 using Algorithms.BST.FindClosestValue;
+using Algorithms.BST;
 
 namespace Algorithms.Tests.BST
 {

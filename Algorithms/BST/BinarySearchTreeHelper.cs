@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.BST
 {
     public static class BinarySearchTreeHelper
     {
@@ -16,20 +16,20 @@ namespace Algorithms.Common
             var rootNode = binarySearchTree.Root;
             var newNode = new BinarySearchTreeNode(data);
 
-            if (rootNode == null)
+            if(rootNode == null)
             {
                 binarySearchTree.Root = newNode;
             }
             else
             {
                 var currentNode = rootNode;
-                while (true)
+                while(true)
                 {
                     var parentNode = currentNode;
-                    if (newNode.Value < currentNode.Value)
+                    if(newNode.Value < currentNode.Value)
                     {
                         currentNode = currentNode.Left;
-                        if ( currentNode != null )
+                        if(currentNode != null)
                         {
                             continue;
                         }
@@ -39,7 +39,7 @@ namespace Algorithms.Common
                     else
                     {
                         currentNode = currentNode.Right;
-                        if (currentNode == null)
+                        if(currentNode == null)
                         {
                             parentNode.Right = newNode;
                             return;
@@ -51,7 +51,7 @@ namespace Algorithms.Common
 
         public static void InOrderTraversal(BinarySearchTreeNode root)
         {
-            if (root == null)
+            if(root == null)
             {
                 return;
             }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.BT
 {
     public static class BinaryTreeHelper
     {
@@ -15,7 +15,7 @@ namespace Algorithms.Common
 
             var newBinaryTreeNode = new BinaryTreeNode(value);
 
-            if (binaryTree.Root == null)
+            if(binaryTree.Root == null)
             {
                 binaryTree.Root = newBinaryTreeNode;
                 return;
@@ -23,16 +23,16 @@ namespace Algorithms.Common
 
             var nodeQueue = new Queue<BinaryTreeNode>();
             nodeQueue.Enqueue(binaryTree.Root);
-            while (nodeQueue.Count > 0)
+            while(nodeQueue.Count > 0)
             {
                 var currentNode = nodeQueue.Dequeue();
-                if (currentNode.Left == null)
+                if(currentNode.Left == null)
                 {
                     newBinaryTreeNode.Parent = currentNode;
                     currentNode.Left = newBinaryTreeNode;
                     return;
                 }
-                else if (currentNode.Right == null)
+                else if(currentNode.Right == null)
                 {
                     newBinaryTreeNode.Parent = currentNode;
                     currentNode.Right = newBinaryTreeNode;
@@ -48,7 +48,7 @@ namespace Algorithms.Common
 
         public static void RecursiveInorderTraversal(BinaryTreeNode binaryTreeNode)
         {
-            if (binaryTreeNode == null)
+            if(binaryTreeNode == null)
             {
                 return;
             }

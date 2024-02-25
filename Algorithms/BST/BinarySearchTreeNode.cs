@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.Common
+namespace Algorithms.BST
 {
-   public class BinarySearchTreeNode
+    public class BinarySearchTreeNode
     {
         public int Value { get; set; }
         internal BinarySearchTreeNode Left { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace Algorithms.Common
+﻿namespace Algorithms.BT
 {
     public class BinaryTreeNode
     {
