@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithms.Common;
+using Algorithms.BT;
 using Algorithms.BT.FindNodesDistanceK;
 
 namespace Algorithms.Tests.BT
