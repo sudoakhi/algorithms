@@ -42,6 +42,16 @@ namespace Algorithms.Trie
 
         public static void Insert(PrefixTrie trie, string s)
         {
+            if(trie == null )
+            {
+                return;
+            }
+
+            if(s == null )
+            {
+                return;
+            }
+
             var prefixNode = Prefix(trie, s);
             var currentNode = prefixNode;
             for(var i = currentNode.Depth; i < s.Length; i++)
@@ -70,6 +80,16 @@ namespace Algorithms.Trie
 
         public static bool Search(PrefixTrie trie, string s)
         {
+            if(trie == null)
+            {
+                return false;
+            }
+
+            if(s == null)
+            {
+                return false;
+            }
+
             var prefixNode = Prefix(trie, s);
             return prefixNode.Depth == s.Length && FindChildNode(prefixNode, '$') != null;
         }
